@@ -2,10 +2,12 @@ package com.wrapper.octopusenergy.response.data;
 
 import java.util.List;
 
+import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.wrapper.octopusenergy.response.Response;
 
-public class ProductData {
+public class ProductData extends Response<ProductData> {
     @SerializedName("count")
     @Expose
     private Integer count;
@@ -49,5 +51,9 @@ public class ProductData {
 
     public void setProducts(List<OctopusEnergyProduct> products) {
         this.products = products;
+    }
+
+    public String toString() {
+        return new GsonBuilder().setPrettyPrinting().create().toJson(this);
     }
 }
