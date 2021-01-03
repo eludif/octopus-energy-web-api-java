@@ -1,9 +1,9 @@
 package com.wrapper.octopusenergy.request;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.util.TimeZone;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 import com.wrapper.octopusenergy.OctopusEnergyApi;
 import com.wrapper.octopusenergy.response.data.ProductData;
@@ -87,11 +87,10 @@ public class ProductsRequest extends Request<ProductData> {
             return this;
         }
 
-        private String getFormattedDateTimeString(LocalDateTime availableAt) {
-            TimeZone tz = TimeZone.getTimeZone("UTC");
-            DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'");
-            df.setTimeZone(tz);
-            return df.format(availableAt);
+        private static String getFormattedDateTimeString(LocalDateTime availableAt) {
+            DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm'Z'");
+            ZonedDateTime zonedDateTime = availableAt.atZone(ZoneId.of("UTC"));
+            return zonedDateTime.format(df);
         }
     }
 }
