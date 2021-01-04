@@ -7,7 +7,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.wrapper.octopusenergy.response.Response;
 
-public class ProductData extends Response<ProductData> {
+public class ProductListData extends Response<ProductListData> {
     @SerializedName("count")
     @Expose
     private Integer count;

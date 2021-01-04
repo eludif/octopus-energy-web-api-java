@@ -1,14 +1,13 @@
 package com.wrapper.octopusenergy.request;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 
 import com.wrapper.octopusenergy.OctopusEnergyApi;
-import com.wrapper.octopusenergy.response.data.ProductData;
+import com.wrapper.octopusenergy.response.data.ProductListData;
 
-public class ProductsRequest extends Request<ProductData> {
+import static com.wrapper.octopusenergy.util.ISODateFormatter.getFormattedDateTimeString;
+
+public class ProductsRequest extends Request<ProductListData> {
 
     private final String isVariable;
     private final String isGreen;
@@ -28,7 +27,7 @@ public class ProductsRequest extends Request<ProductData> {
         this.availableAt = builder.availableAt;
     }
 
-    protected ProductData execute() {
+    protected ProductListData execute() {
         return super.execute(octopusEnergyApi
                 .octopusEnergyApiService().getProducts(
                         isVariable,
@@ -37,10 +36,10 @@ public class ProductsRequest extends Request<ProductData> {
                         isPrepay,
                         isBusiness,
                         availableAt
-                ), ProductData.class);
+                ), ProductListData.class);
     }
 
-    public static class Builder extends AbstractBuilder<ProductData> {
+    public static class Builder extends AbstractBuilder<ProductListData> {
         private String isVariable;
         private String isGreen;
         private String isTracker;
@@ -53,7 +52,7 @@ public class ProductsRequest extends Request<ProductData> {
         }
 
         @Override
-        public ProductData execute() {
+        public ProductListData execute() {
             return new ProductsRequest(this).execute();
         }
 
@@ -85,12 +84,6 @@ public class ProductsRequest extends Request<ProductData> {
         public Builder availableAt(LocalDateTime availableAt) {
             this.availableAt = getFormattedDateTimeString(availableAt);
             return this;
-        }
-
-        private static String getFormattedDateTimeString(LocalDateTime availableAt) {
-            DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm'Z'");
-            ZonedDateTime zonedDateTime = availableAt.atZone(ZoneId.of("UTC"));
-            return zonedDateTime.format(df);
         }
     }
 }

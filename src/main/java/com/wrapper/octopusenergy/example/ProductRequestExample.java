@@ -3,17 +3,17 @@ package com.wrapper.octopusenergy.example;
 import java.time.LocalDateTime;
 
 import com.wrapper.octopusenergy.OctopusEnergyApi;
-import com.wrapper.octopusenergy.response.data.ProductData;
+import com.wrapper.octopusenergy.response.data.OctopusEnergyProduct;
 
 public class ProductRequestExample {
     public static void main(String[] args) {
         // For all requests an API key is needed
-        OctopusEnergyApi api = new OctopusEnergyApi("API_KEY");
+        OctopusEnergyApi api = new OctopusEnergyApi(args[0]);
 
         // Create and execute a request
-        ProductData productsRequest = api.getProducts()
-                                         .availableAt(LocalDateTime.now())
-                                         .execute();
-        System.out.println("productsRequest: " + productsRequest);
+        OctopusEnergyProduct product = api.getProduct("M-AND-S-SEG-FIX-12M-20-11-11")
+                                                  .tariffsActiveAt(LocalDateTime.now())
+                                                  .execute();
+        System.out.println("productRequest: " + product);
     }
 }

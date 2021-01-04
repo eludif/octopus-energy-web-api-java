@@ -3,9 +3,12 @@ package com.wrapper.octopusenergy.response.data;
 import java.util.List;
 
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.sun.istack.internal.Nullable;
 import com.wrapper.octopusenergy.response.Response;
+import netscape.javascript.JSObject;
 
 public class OctopusEnergyProduct extends Response<OctopusEnergyProduct> {
     @SerializedName("code")
@@ -49,7 +52,26 @@ public class OctopusEnergyProduct extends Response<OctopusEnergyProduct> {
     private String availableFrom;
     @SerializedName("available_to")
     @Expose
-    private Object availableTo;
+    private String availableTo;
+    @SerializedName("tariffs_active_at")
+    @Expose
+    @Nullable
+    private String tariffsActiveAt;
+    @SerializedName("single_register_electricity_tariffs")
+    @Expose
+    private JsonObject singleRegisterElectricityTariffs;
+    @SerializedName("dual_register_electricity_tariffs")
+    @Expose
+    private JsonObject dualRegisterElectricityTariffs;
+    @SerializedName("single_register_gas_tariffs")
+    @Expose
+    private JsonObject singleRegisterGasTariffs;
+    @SerializedName("sample_quotes")
+    @Expose
+    private JsonObject sampleQuotes;
+    @SerializedName("sample_consumption")
+    @Expose
+    private SampleConsumption sampleConsumption;
     @SerializedName("links")
     @Expose
     private List<Links> links = null;
@@ -158,12 +180,20 @@ public class OctopusEnergyProduct extends Response<OctopusEnergyProduct> {
         this.availableFrom = availableFrom;
     }
 
-    public Object getAvailableTo() {
+    public String getAvailableTo() {
         return availableTo;
     }
 
-    public void setAvailableTo(Object availableTo) {
+    public void setAvailableTo(String availableTo) {
         this.availableTo = availableTo;
+    }
+
+    public String getTariffsActiveAt() {
+        return tariffsActiveAt;
+    }
+
+    public void setTariffsActiveAt(String tariffsActiveAt) {
+        this.tariffsActiveAt = tariffsActiveAt;
     }
 
     public List<Links> getLinks() {
@@ -172,6 +202,46 @@ public class OctopusEnergyProduct extends Response<OctopusEnergyProduct> {
 
     public void setLinks(List<Links> links) {
         this.links = links;
+    }
+
+    public JsonObject getSingleRegisterElectricityTariffs() {
+        return singleRegisterElectricityTariffs;
+    }
+
+    public void setSingleRegisterElectricityTariffs(JsonObject singleRegisterElectricityTariffs) {
+        this.singleRegisterElectricityTariffs = singleRegisterElectricityTariffs;
+    }
+
+    public JsonObject getDualRegisterElectricityTariffs() {
+        return dualRegisterElectricityTariffs;
+    }
+
+    public void setDualRegisterElectricityTariffs(JsonObject dualRegisterElectricityTariffs) {
+        this.dualRegisterElectricityTariffs = dualRegisterElectricityTariffs;
+    }
+
+    public JsonObject getSingleRegisterGasTariffs() {
+        return singleRegisterGasTariffs;
+    }
+
+    public void setSingleRegisterGasTariffs(JsonObject singleRegisterGasTariffs) {
+        this.singleRegisterGasTariffs = singleRegisterGasTariffs;
+    }
+
+    public JsonObject getSampleQuotes() {
+        return sampleQuotes;
+    }
+
+    public void setSampleQuotes(JsonObject sampleQuotes) {
+        this.sampleQuotes = sampleQuotes;
+    }
+
+    public SampleConsumption getSampleConsumption() {
+        return sampleConsumption;
+    }
+
+    public void setSampleConsumption(SampleConsumption sampleConsumption) {
+        this.sampleConsumption = sampleConsumption;
     }
 
     public String toString() {

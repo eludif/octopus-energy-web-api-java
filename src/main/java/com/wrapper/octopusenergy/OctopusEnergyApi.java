@@ -3,6 +3,7 @@ package com.wrapper.octopusenergy;
 import java.util.Collections;
 
 import com.wrapper.octopusenergy.request.ProductsRequest;
+import com.wrapper.octopusenergy.request.RetrieveProductRequest;
 import com.wrapper.octopusenergy.service.OctopusEnergyApiService;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -20,7 +21,6 @@ public class OctopusEnergyApi {
     private static final String BASE_URL = "https://api.octopus.energy";
 
     private Retrofit retrofit;
-    private OkHttpClient okHttpClient;
 
     public OctopusEnergyApi(String apiKey) {
         this(apiKey, BASE_URL);
@@ -31,7 +31,7 @@ public class OctopusEnergyApi {
     }
 
     private void setupHttpClient(String apiKey, String baseUrl) {
-        okHttpClient = new OkHttpClient.Builder()
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addNetworkInterceptor(new OctopusEnergyInterceptor(apiKey, Collections.emptyMap()))
                 .build();
 
@@ -50,7 +50,11 @@ public class OctopusEnergyApi {
         return getRetrofitInstance().create(OctopusEnergyApiService.class);
     }
 
-    public ProductsRequest.Builder getProducts() {
+    public ProductsRequest.Builder getProductList() {
         return new ProductsRequest.Builder(this);
+    }
+
+    public RetrieveProductRequest.Builder getProduct(String productCode) {
+        return new RetrieveProductRequest.Builder(this, productCode);
     }
 }
