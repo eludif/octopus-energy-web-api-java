@@ -11,7 +11,7 @@ public class ProductRequestExample {
         OctopusEnergyApi api = new OctopusEnergyApi(args[0]);
 
         // Create and execute a request
-        OctopusEnergyProduct product = api.getProduct("M-AND-S-SEG-FIX-12M-20-11-11")
+        OctopusEnergyProduct product = api.getProduct("PREPAY-VAR-18-09-21")
                                                   .tariffsActiveAt(LocalDateTime.now())
                                                   .execute();
         System.out.println("productRequest: " + product);
