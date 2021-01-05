@@ -8,7 +8,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.sun.istack.internal.Nullable;
 import com.wrapper.octopusenergy.response.Response;
-import netscape.javascript.JSObject;
 
 public class OctopusEnergyProduct extends Response<OctopusEnergyProduct> {
     @SerializedName("code")

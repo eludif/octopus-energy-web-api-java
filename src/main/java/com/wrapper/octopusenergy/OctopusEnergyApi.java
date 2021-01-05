@@ -4,6 +4,9 @@ import java.util.Collections;
 
 import com.wrapper.octopusenergy.request.ProductsRequest;
 import com.wrapper.octopusenergy.request.RetrieveProductRequest;
+import com.wrapper.octopusenergy.request.TariffChargesListRequest;
+import com.wrapper.octopusenergy.response.data.EnergyType;
+import com.wrapper.octopusenergy.response.data.RateType;
 import com.wrapper.octopusenergy.service.OctopusEnergyApiService;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -56,5 +59,9 @@ public class OctopusEnergyApi {
 
     public RetrieveProductRequest.Builder getProduct(String productCode) {
         return new RetrieveProductRequest.Builder(this, productCode);
+    }
+
+    public TariffChargesListRequest.Builder getTariffCharges(String productCode, String tariffCode, EnergyType energyType, RateType rateType) {
+        return new TariffChargesListRequest.Builder(this, productCode, tariffCode, energyType, rateType);
     }
 }
