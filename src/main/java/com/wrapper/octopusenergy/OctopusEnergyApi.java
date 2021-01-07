@@ -2,6 +2,7 @@ package com.wrapper.octopusenergy;
 
 import java.util.Collections;
 
+import com.wrapper.octopusenergy.request.ElectricityMeterPointRequest;
 import com.wrapper.octopusenergy.request.ProductsRequest;
 import com.wrapper.octopusenergy.request.RetrieveProductRequest;
 import com.wrapper.octopusenergy.request.TariffChargesListRequest;
@@ -63,5 +64,9 @@ public class OctopusEnergyApi {
 
     public TariffChargesListRequest.Builder getTariffCharges(String productCode, String tariffCode, EnergyType energyType, RateType rateType) {
         return new TariffChargesListRequest.Builder(this, productCode, tariffCode, energyType, rateType);
+    }
+
+    public ElectricityMeterPointRequest.Builder getElectricityMeterPoint(String mpan) {
+        return new ElectricityMeterPointRequest.Builder(this, mpan);
     }
 }
