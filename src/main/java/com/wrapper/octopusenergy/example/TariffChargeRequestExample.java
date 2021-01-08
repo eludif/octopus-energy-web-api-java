@@ -11,8 +11,11 @@ public class TariffChargeRequestExample {
         OctopusEnergyApi api = new OctopusEnergyApi(args[0]);
 
         // Create and execute a request
-        TariffChargeData product = api.getTariffCharges("PREPAY-VAR-18-09-21", "E-1R-PREPAY-VAR-18-09-21-A", EnergyType.ELECTRICITY_TARIFFS, RateType.STANDING_CHARGES)
-                                      .execute();
-        System.out.println("productRequest: " + product);
+        TariffChargeData tariffChargeData = api.getTariffCharges(
+                "PREPAY-VAR-18-09-21",
+                "E-1R-PREPAY-VAR-18-09-21-A",
+                EnergyType.ELECTRICITY_TARIFFS,
+                RateType.STANDING_CHARGES).execute();
+        System.out.println("tariffChargeData: " + tariffChargeData);
     }
 }
