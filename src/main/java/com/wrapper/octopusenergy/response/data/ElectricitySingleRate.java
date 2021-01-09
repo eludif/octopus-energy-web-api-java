@@ -16,5 +16,4 @@ public class ElectricitySingleRate {
     public void setElectricityStandard(Integer electricityStandard) {
         this.electricityStandard = electricityStandard;
     }
-
 }

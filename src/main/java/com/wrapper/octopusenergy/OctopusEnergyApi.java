@@ -3,10 +3,12 @@ package com.wrapper.octopusenergy;
 import java.util.Collections;
 
 import com.wrapper.octopusenergy.request.ElectricityMeterPointRequest;
+import com.wrapper.octopusenergy.request.MeterConsumptionListRequest;
 import com.wrapper.octopusenergy.request.ProductsRequest;
 import com.wrapper.octopusenergy.request.RetrieveProductRequest;
 import com.wrapper.octopusenergy.request.TariffChargesListRequest;
 import com.wrapper.octopusenergy.response.data.EnergyType;
+import com.wrapper.octopusenergy.response.data.MeterType;
 import com.wrapper.octopusenergy.response.data.RateType;
 import com.wrapper.octopusenergy.service.OctopusEnergyApiService;
 import okhttp3.OkHttpClient;
@@ -68,5 +70,9 @@ public class OctopusEnergyApi {
 
     public ElectricityMeterPointRequest.Builder getElectricityMeterPoint(String mpan) {
         return new ElectricityMeterPointRequest.Builder(this, mpan);
+    }
+
+    public MeterConsumptionListRequest.Builder getMeterConsumption(MeterType meterType, String meterId, String serialNumber) {
+        return new MeterConsumptionListRequest.Builder(this, meterType, meterId, serialNumber);
     }
 }

@@ -9,8 +9,8 @@ public class ElectricityMeterPointRequestExample {
         OctopusEnergyApi api = new OctopusEnergyApi(args[0]);
 
         // Create and execute a request
-        ElectricityMeterPoint electricityMeterPoint = api.getElectricityMeterPoint("1200061650317")
-                                                         .execute();
+        ElectricityMeterPoint electricityMeterPoint = api.getElectricityMeterPoint(
+                "mpan").execute();
         System.out.println("electricityMeterPoint: " + electricityMeterPoint);
     }
 }

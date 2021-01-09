@@ -15,7 +15,8 @@ public class TariffChargeRequestExample {
                 "PREPAY-VAR-18-09-21",
                 "E-1R-PREPAY-VAR-18-09-21-A",
                 EnergyType.ELECTRICITY_TARIFFS,
-                RateType.STANDING_CHARGES).execute();
+                RateType.STANDING_CHARGES
+        ).execute();
         System.out.println("tariffChargeData: " + tariffChargeData);
     }
 }
