@@ -1,6 +1,7 @@
 package com.wrapper.octopusenergy.service;
 
 import com.wrapper.octopusenergy.response.data.ElectricityMeterPoint;
+import com.wrapper.octopusenergy.response.data.MeterConsumption;
 import com.wrapper.octopusenergy.response.data.OctopusEnergyProduct;
 import com.wrapper.octopusenergy.response.data.ProductListData;
 import com.wrapper.octopusenergy.response.data.TariffChargeData;
@@ -40,5 +41,17 @@ public interface OctopusEnergyApiService {
     @GET("/v1/electricity-meter-points/{mpan}/")
     Call<ElectricityMeterPoint> getElectricityMeterPoint(
             @Path("mpan") String mpan
+    );
+
+    @GET("/v1/{meter_point_type}/{meter_id}/meters/{serial_number}/consumption/")
+    Call<MeterConsumption> getMeterConsumption(
+            @Path("meter_point_type") String meterPointType,
+            @Path("meter_id") String meterId,
+            @Path("serial_number") String serialNumber,
+            @Query("period_from") String periodFrom,
+            @Query("period_to") String periodTo,
+            @Query("page_size") String pageSize,
+            @Query("order_by") String orderBy,
+            @Query("group_by") String groupBy
     );
 }
