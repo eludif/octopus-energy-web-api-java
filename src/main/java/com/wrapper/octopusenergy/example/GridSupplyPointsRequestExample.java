@@ -10,6 +10,6 @@ public class GridSupplyPointsRequestExample {
 
         // Create and execute a request
         GridSupplyPointsData gridSupplyPoints = api.getGridSupplyPoints().postCode("EC1").execute();
-        System.out.println("meterConsumption: " + gridSupplyPoints);
+        System.out.println("gridSupplyPoints: " + gridSupplyPoints);
     }
 }
