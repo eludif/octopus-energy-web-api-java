@@ -1,5 +1,6 @@
 package com.wrapper.octopusenergy.response.data;
 
+import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -50,4 +51,7 @@ public class TariffCharge {
         this.validTo = validTo;
     }
 
+    public String toString() {
+        return new GsonBuilder().setPrettyPrinting().create().toJson(this);
+    }
 }
