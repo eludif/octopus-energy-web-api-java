@@ -1,5 +1,6 @@
 package com.wrapper.octopusenergy.response.data;
 
+import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -48,5 +49,9 @@ public class SampleConsumption {
 
     public void setDualFuelDualRate(DualFuelDualRate dualFuelDualRate) {
         this.dualFuelDualRate = dualFuelDualRate;
+    }
+
+    public String toString() {
+        return new GsonBuilder().setPrettyPrinting().create().toJson(this);
     }
 }

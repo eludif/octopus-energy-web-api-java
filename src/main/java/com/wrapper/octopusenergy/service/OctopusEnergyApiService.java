@@ -1,6 +1,7 @@
 package com.wrapper.octopusenergy.service;
 
 import com.wrapper.octopusenergy.response.data.ElectricityMeterPoint;
+import com.wrapper.octopusenergy.response.data.GridSupplyPointsData;
 import com.wrapper.octopusenergy.response.data.MeterConsumption;
 import com.wrapper.octopusenergy.response.data.OctopusEnergyProduct;
 import com.wrapper.octopusenergy.response.data.ProductListData;
@@ -53,5 +54,10 @@ public interface OctopusEnergyApiService {
             @Query("page_size") String pageSize,
             @Query("order_by") String orderBy,
             @Query("group_by") String groupBy
+    );
+
+    @GET("/v1/industry/grid-supply-points/")
+    Call<GridSupplyPointsData> getGridSupplyPoints(
+            @Query("postcode") String postCode
     );
 }

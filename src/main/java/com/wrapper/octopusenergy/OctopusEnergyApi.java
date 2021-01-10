@@ -3,6 +3,7 @@ package com.wrapper.octopusenergy;
 import java.util.Collections;
 
 import com.wrapper.octopusenergy.request.ElectricityMeterPointRequest;
+import com.wrapper.octopusenergy.request.GridSupplyPointsRequest;
 import com.wrapper.octopusenergy.request.MeterConsumptionListRequest;
 import com.wrapper.octopusenergy.request.ProductsRequest;
 import com.wrapper.octopusenergy.request.RetrieveProductRequest;
@@ -74,5 +75,9 @@ public class OctopusEnergyApi {
 
     public MeterConsumptionListRequest.Builder getMeterConsumption(MeterType meterType, String meterId, String serialNumber) {
         return new MeterConsumptionListRequest.Builder(this, meterType, meterId, serialNumber);
+    }
+
+    public GridSupplyPointsRequest.Builder getGridSupplyPoints() {
+        return new GridSupplyPointsRequest.Builder(this);
     }
 }
