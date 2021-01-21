@@ -69,8 +69,8 @@ public class TariffChargesListRequest extends Request<TariffChargeData> {
             return this;
         }
 
-        public Builder pageSize(String pageSize) {
-            this.pageSize = pageSize;
+        public Builder pageSize(Integer pageSize) {
+            this.pageSize = pageSize.toString();
             return this;
         }
 
