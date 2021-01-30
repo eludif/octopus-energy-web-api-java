@@ -42,8 +42,8 @@ public class Quote {
         List<String> productCodes;
         Integer consumptionDay;
         Integer consumptionNight;
-        boolean hasSmartMeter;
-        boolean businessProductsOnly;
+        Boolean hasSmartMeter;
+        Boolean businessProductsOnly;
         Integer consumptionOffPeak;
 
         public QuoteBuilder(MeterType meterType) {
