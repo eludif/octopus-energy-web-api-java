@@ -2,6 +2,7 @@ package com.wrapper.octopusenergy.response.data;
 
 public enum MeterType {
     ELECTRICITY("electricity-meter-points"),
+    ELECTRICITY_THREE_REGISTER("electricity-meter-points"),
     GAS("gas-meter-points");
 
     private String value;

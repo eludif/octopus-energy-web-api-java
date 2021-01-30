@@ -8,18 +8,20 @@ public class Quote {
     String mpan;
     String postCode;
     String brandCode;
+    MeterType meterType;
     List<String> productCodes;
-    int consumptionDay;
-    boolean hasSmartMeter;
-    boolean businessProductsOnly;
-    int consumptionStandard;
-    int consumptionNight;
-    int consumptionOffPeak;
+    Integer consumptionDay;
+    Boolean hasSmartMeter;
+    Boolean businessProductsOnly;
+    Integer consumptionStandard;
+    Integer consumptionNight;
+    Integer consumptionOffPeak;
 
     private Quote(QuoteBuilder quoteBuilder) {
         this.gsp = quoteBuilder.gsp;
         this.mpan = quoteBuilder.mpan;
         this.postCode = quoteBuilder.postCode;
+        this.meterType = quoteBuilder.meterType;
         this.consumptionDay = quoteBuilder.consumptionDay;
         this.hasSmartMeter = quoteBuilder.hasSmartMeter;
         this.consumptionStandard = quoteBuilder.consumptionStandard;
@@ -35,13 +37,18 @@ public class Quote {
         String mpan;
         String postCode;
         String brandCode;
-        int consumptionStandard;
+        MeterType meterType;
+        Integer consumptionStandard;
         List<String> productCodes;
-        int consumptionDay;
-        int consumptionNight;
+        Integer consumptionDay;
+        Integer consumptionNight;
         boolean hasSmartMeter;
         boolean businessProductsOnly;
-        int consumptionOffPeak;
+        Integer consumptionOffPeak;
+
+        public QuoteBuilder(MeterType meterType) {
+            this.meterType = meterType;
+        }
 
         public QuoteBuilder withGSP(String gsp) {
             this.gsp = gsp;
@@ -94,6 +101,28 @@ public class Quote {
         }
 
         public Quote build() {
+            if (meterType ==null)
+                throw new IllegalStateException("Meter type must be specified for quote");
+            if (gsp == null || postCode == null)
+                throw new IllegalStateException("For all meter-points, at least one of gsp or postcode must be included.");
+
+            switch (meterType) {
+                case GAS: {
+                    if (consumptionStandard == null) {
+                        throw new IllegalStateException("For a gas meter-point, consumption_standard must be included.");
+                    }
+                }
+                case ELECTRICITY: {
+                    if(consumptionStandard == null || (consumptionDay == null && consumptionNight == null)) {
+                        throw new IllegalStateException("At least one of `consumption_standard` or a combination of `consumption_day` and `consumption_night` must be included");
+                    }
+                }
+                case ELECTRICITY_THREE_REGISTER: {
+                    if (consumptionDay == null && consumptionNight == null && consumptionOffPeak == null) {
+                        throw new IllegalStateException("At least one of `consumption_standard` or a combination of `consumption_day` and `consumption_night` must be included");
+                    }
+                }
+            }
             return new Quote(this);
         }
     }
