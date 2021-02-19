@@ -16,6 +16,7 @@ public class RetrieveProductRequest extends Request<OctopusEnergyProduct> {
         this.productCode = builder.productCode;
         this.tariffsActiveAt = builder.tariffsActiveAt;
     }
+
     protected OctopusEnergyProduct execute() {
         return super.execute(octopusEnergyApi
                 .octopusEnergyApiService().getProduct(productCode, tariffsActiveAt), OctopusEnergyProduct.class);
@@ -23,8 +24,8 @@ public class RetrieveProductRequest extends Request<OctopusEnergyProduct> {
 
     public static class Builder extends AbstractBuilder<OctopusEnergyProduct> {
 
-        private String tariffsActiveAt;
         private final String productCode;
+        private String tariffsActiveAt;
 
         public Builder(OctopusEnergyApi octopusEnergyApi, String productCode) {
             super(octopusEnergyApi);
@@ -40,6 +41,5 @@ public class RetrieveProductRequest extends Request<OctopusEnergyProduct> {
             this.tariffsActiveAt = getFormattedDateTimeString(tariffsActiveAt);
             return this;
         }
-
     }
 }

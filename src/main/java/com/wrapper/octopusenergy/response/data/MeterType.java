@@ -5,7 +5,7 @@ public enum MeterType {
     ELECTRICITY_THREE_REGISTER("electricity-meter-points"),
     GAS("gas-meter-points");
 
-    private String value;
+    private final String value;
 
     MeterType(String value) {
         this.value = value;

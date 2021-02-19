@@ -101,7 +101,7 @@ public class Quote {
         }
 
         public Quote build() {
-            if (meterType ==null)
+            if (meterType == null)
                 throw new IllegalStateException("Meter type must be specified for quote");
             if (gsp == null || postCode == null)
                 throw new IllegalStateException("For all meter-points, at least one of gsp or postcode must be included.");
@@ -113,7 +113,7 @@ public class Quote {
                     }
                 }
                 case ELECTRICITY: {
-                    if(consumptionStandard == null || (consumptionDay == null && consumptionNight == null)) {
+                    if (consumptionStandard == null || (consumptionDay == null && consumptionNight == null)) {
                         throw new IllegalStateException("At least one of `consumption_standard` or a combination of `consumption_day` and `consumption_night` must be included");
                     }
                 }

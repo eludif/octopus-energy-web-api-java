@@ -7,7 +7,7 @@ public enum GroupType {
     MONTH("month"),
     QUARTER("quarter");
 
-    private String value;
+    private final String value;
 
     GroupType(String value) {
         this.value = value;

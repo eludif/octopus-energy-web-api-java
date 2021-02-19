@@ -43,13 +43,13 @@ public class TariffChargesListRequest extends Request<TariffChargeData> {
 
     public static class Builder extends AbstractBuilder<TariffChargeData> {
 
-        private String periodTo;
-        private String pageSize;
-        private String periodFrom;
         private final String tariffCode;
         private final RateType rateType;
         private final String productCode;
         private final EnergyType energyType;
+        private String periodTo;
+        private String pageSize;
+        private String periodFrom;
 
         public Builder(OctopusEnergyApi octopusEnergyApi, String productCode, String tariffCode, EnergyType energyType, RateType rateType) {
             super(octopusEnergyApi);
