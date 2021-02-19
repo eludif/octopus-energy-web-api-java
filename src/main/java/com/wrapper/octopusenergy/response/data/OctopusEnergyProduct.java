@@ -6,7 +6,6 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.sun.istack.internal.Nullable;
 import com.wrapper.octopusenergy.response.Response;
 
 public class OctopusEnergyProduct extends Response<OctopusEnergyProduct> {
@@ -54,7 +53,6 @@ public class OctopusEnergyProduct extends Response<OctopusEnergyProduct> {
     private String availableTo;
     @SerializedName("tariffs_active_at")
     @Expose
-    @Nullable
     private String tariffsActiveAt;
     @SerializedName("single_register_electricity_tariffs")
     @Expose
