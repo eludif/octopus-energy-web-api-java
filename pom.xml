@@ -7,79 +7,141 @@
         4.0.0
     </modelVersion>
 
-    <groupId>
-        com.labseven
-    </groupId>
-    <artifactId>
-        octopus-energy-web-api-java
-    </artifactId>
-    <version>
-        1.0-SNAPSHOT
-    </version>
+    <groupId>com.github.faeludire</groupId>
+    <artifactId>octopus-energy-web-api-java</artifactId>
+    <version>1.0</version>
+
+    <name>octopus-energy-web-api-java</name>
+    <description>Java library for Octopus Energy REST API.</description>
+    <url>https://github.com/faeludire/octopus-energy-web-api-java</url>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/faeludire/octopus-energy-web-api-java/issues</url>
+    </issueManagement>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Fiyinfolu Eludire</name>
+            <email>labsevenbase@gmail.com</email>
+            <organization>LabSevenBase</organization>
+            <organizationUrl>https://github.com/faeludire</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/faeludire/octopus-energy-web-api-java</url>
+        <connection>
+            scm:git:git://github.com/faeludire/octopus-energy-web-api-java.git
+        </connection>
+        <developerConnection>
+            scm:git:ssh://git@github.com:faeludire/octopus-energy-web-api-java.git
+        </developerConnection>
+    </scm>
 
     <properties>
-        <maven.compiler.source>
-            8
-        </maven.compiler.source>
-        <maven.compiler.target>
-            8
-        </maven.compiler.target>
-        <retrofit.version>
-            2.5.0
-        </retrofit.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <retrofit.version>2.5.0</retrofit.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>
-                com.squareup.retrofit2
-            </groupId>
-            <artifactId>
-                retrofit
-            </artifactId>
-            <version>
-                ${retrofit.version}
-            </version>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>retrofit</artifactId>
+            <version>${retrofit.version}</version>
         </dependency>
         <dependency>
-            <groupId>
-                com.squareup.retrofit2
-            </groupId>
-            <artifactId>
-                converter-gson
-            </artifactId>
-            <version>
-                ${retrofit.version}
-            </version>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>converter-gson</artifactId>
+            <version>${retrofit.version}</version>
         </dependency>
         <dependency>
-            <groupId>
-                junit
-            </groupId>
-            <artifactId>
-                junit
-            </artifactId>
-            <version>
-                4.12
-            </version>
-            <scope>
-                test
-            </scope>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>
-                org.assertj
-            </groupId>
-            <artifactId>
-                assertj-core
-            </artifactId>
-            <version>
-                3.13.2
-            </version>
-            <scope>
-                test
-            </scope>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.13.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
