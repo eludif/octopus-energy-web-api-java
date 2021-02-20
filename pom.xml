@@ -8,7 +8,7 @@
 
     <groupId>com.github.faeludire</groupId>
     <artifactId>octopus-energy-web-api-java</artifactId>
-    <version>1.0</version>
+    <version>1.0.4</version>
 
     <name>octopus-energy-web-api-java</name>
     <description>Java library for Octopus Energy REST API.</description>
@@ -133,7 +133,7 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
+                <version>1.6.8</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>ossrh</serverId>
