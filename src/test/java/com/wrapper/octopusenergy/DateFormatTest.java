@@ -8,7 +8,7 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class GetProductsApiTest {
+public class DateFormatTest {
 
     @Test
     public void shouldCorrectlyFormatDateToISO8601Format() {
