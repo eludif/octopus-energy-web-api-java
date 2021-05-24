@@ -14,7 +14,7 @@ The Octopus Energy Client Library is easy to install.
 
 To use Maven, add the following lines to your pom.xml file:
 
-```maven
+```xml
   <project>
     <dependencies>
       <dependency>
