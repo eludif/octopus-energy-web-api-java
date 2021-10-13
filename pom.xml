@@ -60,9 +60,9 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <retrofit.version>2.5.0</retrofit.version>
-        <junit.version>4.13.1</junit.version>
-        <assetj.version>3.13.2</assetj.version>
+        <retrofit.version>2.9.0</retrofit.version>
+        <junit.version>4.13.2</junit.version>
+        <assetj.version>3.21.0</assetj.version>
         <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
