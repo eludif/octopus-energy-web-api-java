@@ -1,11 +1,6 @@
 package com.wrapper.octopusenergy.service;
 
-import com.wrapper.octopusenergy.response.data.ElectricityMeterPoint;
-import com.wrapper.octopusenergy.response.data.GridSupplyPointsData;
-import com.wrapper.octopusenergy.response.data.MeterConsumption;
-import com.wrapper.octopusenergy.response.data.OctopusEnergyProduct;
-import com.wrapper.octopusenergy.response.data.ProductListData;
-import com.wrapper.octopusenergy.response.data.TariffChargeData;
+import com.wrapper.octopusenergy.response.data.*;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -45,7 +40,7 @@ public interface OctopusEnergyApiService {
     );
 
     @GET("/v1/{meter_point_type}/{meter_id}/meters/{serial_number}/consumption/")
-    Call<MeterConsumption> getMeterConsumption(
+    Call<MeterConsumptionList> getMeterConsumption(
             @Path("meter_point_type") String meterPointType,
             @Path("meter_id") String meterId,
             @Path("serial_number") String serialNumber,
