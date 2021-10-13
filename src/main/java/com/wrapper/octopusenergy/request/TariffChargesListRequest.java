@@ -1,12 +1,12 @@
 package com.wrapper.octopusenergy.request;
 
-import java.time.LocalDateTime;
-
 import com.wrapper.octopusenergy.OctopusEnergyApi;
 import com.wrapper.octopusenergy.response.data.EnergyType;
 import com.wrapper.octopusenergy.response.data.RateType;
 import com.wrapper.octopusenergy.response.data.TariffChargeData;
 import com.wrapper.octopusenergy.util.ISODateFormatter;
+
+import java.time.LocalDateTime;
 
 public class TariffChargesListRequest extends Request<TariffChargeData> {
     private final String periodTo;

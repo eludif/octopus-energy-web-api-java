@@ -1,11 +1,11 @@
 package com.wrapper.octopusenergy.response.data;
 
-import java.util.List;
-
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.wrapper.octopusenergy.response.Response;
+
+import java.util.List;
 
 public class TariffChargeData extends Response<TariffChargeData> {
 
