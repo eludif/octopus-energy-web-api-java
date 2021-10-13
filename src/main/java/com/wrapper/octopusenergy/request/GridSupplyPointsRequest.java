@@ -5,7 +5,7 @@ import com.wrapper.octopusenergy.response.data.GridSupplyPointsData;
 
 public class GridSupplyPointsRequest extends Request<GridSupplyPointsData> {
 
-    String postCode;
+    final String postCode;
 
     GridSupplyPointsRequest(Builder builder) {
         super(builder.octopusEnergyApi);

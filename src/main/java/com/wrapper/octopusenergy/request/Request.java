@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 public class Request<T extends Response<T>> {
-    OctopusEnergyApi octopusEnergyApi;
+    final OctopusEnergyApi octopusEnergyApi;
 
     Request(OctopusEnergyApi octopusEnergyApi) {
         this.octopusEnergyApi = octopusEnergyApi;

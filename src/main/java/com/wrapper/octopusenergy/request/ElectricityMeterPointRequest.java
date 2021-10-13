@@ -5,7 +5,7 @@ import com.wrapper.octopusenergy.response.data.ElectricityMeterPoint;
 
 public class ElectricityMeterPointRequest extends Request<ElectricityMeterPoint> {
 
-    String mpan;
+    final String mpan;
 
     public ElectricityMeterPointRequest(Builder builder) {
         super(builder.octopusEnergyApi);
@@ -20,7 +20,7 @@ public class ElectricityMeterPointRequest extends Request<ElectricityMeterPoint>
 
     public static class Builder extends AbstractBuilder<ElectricityMeterPoint> {
 
-        String mpan;
+        final String mpan;
 
         public Builder(OctopusEnergyApi octopusEnergyApi, String mpan) {
             super(octopusEnergyApi);

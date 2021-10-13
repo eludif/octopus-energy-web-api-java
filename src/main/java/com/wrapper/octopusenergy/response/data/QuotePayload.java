@@ -5,10 +5,10 @@ import java.util.List;
 
 public class QuotePayload {
 
-    String brandCode;
-    List<String> productCodes;
-    List<Quote> meterPointQuotes;
-    Boolean businessProductsOnly;
+    final String brandCode;
+    final List<String> productCodes;
+    final List<Quote> meterPointQuotes;
+    final Boolean businessProductsOnly;
 
     public QuotePayload(QuotePayloadBuilder builder) {
         this.brandCode = builder.brandCode;
@@ -21,7 +21,7 @@ public class QuotePayload {
 
         String brandCode;
         List<String> productCodes;
-        List<Quote> meterPointQuotes;
+        final List<Quote> meterPointQuotes;
         Boolean businessProductsOnly;
 
         public QuotePayloadBuilder() {

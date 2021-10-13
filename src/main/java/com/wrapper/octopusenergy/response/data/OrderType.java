@@ -4,7 +4,7 @@ public enum OrderType {
     FORWARDS("period"),
     BACKWARDS("-period");
 
-    private String value;
+    private final String value;
 
     OrderType(String value) {
         this.value = value;
