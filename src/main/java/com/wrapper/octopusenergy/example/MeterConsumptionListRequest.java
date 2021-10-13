@@ -1,7 +1,6 @@
 package com.wrapper.octopusenergy.example;
 
 import com.wrapper.octopusenergy.OctopusEnergyApi;
-import com.wrapper.octopusenergy.response.data.MeterConsumption;
 import com.wrapper.octopusenergy.response.data.MeterConsumptionList;
 import com.wrapper.octopusenergy.response.data.MeterType;
 
