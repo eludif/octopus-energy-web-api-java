@@ -4,18 +4,18 @@ import java.util.List;
 
 public class Quote {
 
-    String gsp;
-    String mpan;
-    String postCode;
-    String brandCode;
-    MeterType meterType;
-    List<String> productCodes;
-    Integer consumptionDay;
-    Boolean hasSmartMeter;
-    Boolean businessProductsOnly;
-    Integer consumptionStandard;
-    Integer consumptionNight;
-    Integer consumptionOffPeak;
+    final String gsp;
+    final String mpan;
+    final String postCode;
+    final String brandCode;
+    final MeterType meterType;
+    final List<String> productCodes;
+    final Integer consumptionDay;
+    final Boolean hasSmartMeter;
+    final Boolean businessProductsOnly;
+    final Integer consumptionStandard;
+    final Integer consumptionNight;
+    final Integer consumptionOffPeak;
 
     private Quote(QuoteBuilder quoteBuilder) {
         this.gsp = quoteBuilder.gsp;
@@ -37,7 +37,7 @@ public class Quote {
         String mpan;
         String postCode;
         String brandCode;
-        MeterType meterType;
+        final MeterType meterType;
         Integer consumptionStandard;
         List<String> productCodes;
         Integer consumptionDay;
