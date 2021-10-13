@@ -1,12 +1,13 @@
 package com.wrapper.octopusenergy.request;
 
-import java.io.IOException;
-
 import com.wrapper.octopusenergy.OctopusEnergyApi;
 import com.wrapper.octopusenergy.response.ApiError;
 import com.wrapper.octopusenergy.response.ApiResponse;
 import com.wrapper.octopusenergy.response.Response;
 import retrofit2.Call;
+
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 public class Request<T extends Response<T>> {
     OctopusEnergyApi octopusEnergyApi;

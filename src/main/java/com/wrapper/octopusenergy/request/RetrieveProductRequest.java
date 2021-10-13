@@ -1,9 +1,9 @@
 package com.wrapper.octopusenergy.request;
 
-import java.time.LocalDateTime;
-
 import com.wrapper.octopusenergy.OctopusEnergyApi;
 import com.wrapper.octopusenergy.response.data.OctopusEnergyProduct;
+
+import java.time.LocalDateTime;
 
 import static com.wrapper.octopusenergy.util.ISODateFormatter.getFormattedDateTimeString;
 

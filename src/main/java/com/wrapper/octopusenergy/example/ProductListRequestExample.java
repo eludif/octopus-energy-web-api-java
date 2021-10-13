@@ -1,9 +1,9 @@
 package com.wrapper.octopusenergy.example;
 
-import java.time.LocalDateTime;
-
 import com.wrapper.octopusenergy.OctopusEnergyApi;
 import com.wrapper.octopusenergy.response.data.ProductListData;
+
+import java.time.LocalDateTime;
 
 public class ProductListRequestExample {
     public static void main(String[] args) {

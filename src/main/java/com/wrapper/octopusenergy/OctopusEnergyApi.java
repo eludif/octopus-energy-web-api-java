@@ -1,7 +1,5 @@
 package com.wrapper.octopusenergy;
 
-import java.util.Collections;
-
 import com.wrapper.octopusenergy.request.ElectricityMeterPointRequest;
 import com.wrapper.octopusenergy.request.GridSupplyPointsRequest;
 import com.wrapper.octopusenergy.request.MeterConsumptionListRequest;
@@ -15,6 +13,8 @@ import com.wrapper.octopusenergy.service.OctopusEnergyApiService;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+import java.util.Collections;
 
 /**
  * Instances of the OctopusEnergyApi class provides access to the Octopus Energy Web API

@@ -1,9 +1,9 @@
 package com.wrapper.octopusenergy;
 
-import java.time.LocalDateTime;
-
 import com.wrapper.octopusenergy.util.ISODateFormatter;
 import org.junit.Test;
+
+import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
