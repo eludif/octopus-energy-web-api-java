@@ -4,13 +4,13 @@ import java.time.LocalDateTime;
 
 import com.wrapper.octopusenergy.OctopusEnergyApi;
 import com.wrapper.octopusenergy.response.data.GroupType;
-import com.wrapper.octopusenergy.response.data.MeterConsumption;
+import com.wrapper.octopusenergy.response.data.MeterConsumptionList;
 import com.wrapper.octopusenergy.response.data.MeterType;
 import com.wrapper.octopusenergy.response.data.OrderType;
 
 import static com.wrapper.octopusenergy.util.ISODateFormatter.getFormattedDateTimeString;
 
-public class MeterConsumptionListRequest extends Request<MeterConsumption> {
+public class MeterConsumptionListRequest extends Request<MeterConsumptionList> {
 
     private final String meterType;
     private final String meterId;
@@ -34,7 +34,7 @@ public class MeterConsumptionListRequest extends Request<MeterConsumption> {
         this.groupBy = builder.groupBy;
     }
 
-    protected MeterConsumption execute() {
+    protected MeterConsumptionList execute() {
         return super.execute(
                 octopusEnergyApi.octopusEnergyApiService().getMeterConsumption(
                         meterType,
@@ -45,11 +45,11 @@ public class MeterConsumptionListRequest extends Request<MeterConsumption> {
                         pageSize,
                         orderBy,
                         groupBy
-                ), MeterConsumption.class
+                ), MeterConsumptionList.class
         );
     }
 
-    public static class Builder extends AbstractBuilder<MeterConsumption> {
+    public static class Builder extends AbstractBuilder<MeterConsumptionList> {
 
         private final String meterType;
         private final String meterId;
@@ -94,7 +94,7 @@ public class MeterConsumptionListRequest extends Request<MeterConsumption> {
         }
 
         @Override
-        public MeterConsumption execute() {
+        public MeterConsumptionList execute() {
             return new MeterConsumptionListRequest(this).execute();
         }
     }
