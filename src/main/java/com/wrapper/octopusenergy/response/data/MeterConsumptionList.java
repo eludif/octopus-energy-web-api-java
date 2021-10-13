@@ -54,6 +54,6 @@ public class MeterConsumptionList extends Response<MeterConsumptionList> {
     }
 
     public String toString() {
-        return new GsonBuilder().setPrettyPrinting().create().toJson(this);
+        return new GsonBuilder().setPrettyPrinting().serializeNulls().create().toJson(this);
     }
 }
