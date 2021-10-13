@@ -33,8 +33,8 @@ public class Request<T extends Response<T>> {
         T entity = response.body();
         if (entity == null) {
             try {
-                entity = clazz.newInstance();
-            } catch (InstantiationException | IllegalAccessException e) {
+                entity = clazz.getDeclaredConstructor().newInstance();
+            } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
                 e.printStackTrace();
             }
         }
