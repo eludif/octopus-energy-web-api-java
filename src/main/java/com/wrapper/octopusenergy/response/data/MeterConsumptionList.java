@@ -4,9 +4,13 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.wrapper.octopusenergy.response.Response;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
+@Data
 public class MeterConsumptionList extends Response<MeterConsumptionList> {
     @SerializedName("count")
     @Expose
@@ -19,39 +23,7 @@ public class MeterConsumptionList extends Response<MeterConsumptionList> {
     private String previous;
     @SerializedName("results")
     @Expose
-    private List<MeterConsumption> consumptions = null;
-
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
-    public String getNext() {
-        return next;
-    }
-
-    public void setNext(String next) {
-        this.next = next;
-    }
-
-    public String getPrevious() {
-        return previous;
-    }
-
-    public void setPrevious(String previous) {
-        this.previous = previous;
-    }
-
-    public List<MeterConsumption> getConsumptions() {
-        return consumptions;
-    }
-
-    public void setConsumptions(List<MeterConsumption> consumptions) {
-        this.consumptions = consumptions;
-    }
+    private List<MeterConsumption> consumptions;
 
     public String toString() {
         return new GsonBuilder().setPrettyPrinting().serializeNulls().create().toJson(this);
