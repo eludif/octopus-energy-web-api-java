@@ -1,7 +1,7 @@
 package com.wrapper.octopusenergy;
 
 import com.wrapper.octopusenergy.util.ISODateFormatter;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 
