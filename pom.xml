@@ -62,7 +62,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <retrofit.version>2.11.0</retrofit.version>
         <junit-jupiter-api.version>5.11.4</junit-jupiter-api.version>
-        <assetj.version>3.27.1</assetj.version>
+        <assetj.version>3.27.7</assetj.version>
         <lombok.version>1.18.36</lombok.version>
         <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
